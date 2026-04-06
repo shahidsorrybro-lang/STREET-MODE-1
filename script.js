@@ -8,11 +8,11 @@ function addToCart(product) {
 }
 function payNow(){
   var options = {
-    "key": "rzp_live_SaCvpDZh3fWVVh",
-    "amount": "79900", 
+    "key": "rzp_live_SaCvpDZh3fWVVh",  // 🔴 put your real key here
+    "amount": "79900",
     "currency": "INR",
     "name": "Street Mode",
-    "description": "T-Shirt Purchase",
+    "description": "Purchase",
     "handler": function (response){
         alert("Payment Successful ✅");
     }
@@ -20,7 +20,4 @@ function payNow(){
 
   var rzp = new Razorpay(options);
   rzp.open();
-}
-function payNow(){
-  alert("Button working ✅");
 }
