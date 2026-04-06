@@ -21,3 +21,6 @@ function payNow(){
   var rzp = new Razorpay(options);
   rzp.open();
 }
+function payNow(){
+  alert("Button working ✅");
+}
