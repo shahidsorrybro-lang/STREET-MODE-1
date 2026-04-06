@@ -119,3 +119,7 @@ footer {
   padding: 20px;
   margin-top: 50px;
 }
+button:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
