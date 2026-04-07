@@ -6,15 +6,15 @@ function addToCart(product) {
 }function orderNow(product){
   window.open("https://wa.me/919876543210?text=I want to buy " + product);
 }
-function payNow(){
+function payNow(product, price){
   var options = {
-    "key": "rzp_live_SaCvpDZh3fWVVh",  // 🔴 put your real key here
-    "amount": "79900",
+    "key": "rzp_live_SaCvpDZh3fWVVh",
+    "amount": price * 100,
     "currency": "INR",
     "name": "Street Mode",
-    "description": "Purchase",
+    "description": product,
     "handler": function (response){
-        alert("Payment Successful ✅");
+        alert(product + " Payment Successful ✅");
     }
   };
 
