@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product - Street Mode</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Street Mode</h1>
+</header>
+
+<div style="padding:50px; text-align:center;">
+
+  <img src="https://via.placeholder.com/300">
+
+  <h2 id="productName">Product Name</h2>
+  <p id="productPrice">₹0</p>
+
+  <select id="size">
+    <option value="">Select Size</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+  </select>
+
+  <br><br>
+
+  <button onclick="buyNow()">Buy Now</button>
+
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+function buyNow(){
+  var size = document.getElementById("size").value;
+
+  if(size === ""){
+    alert("Select size first ❌");
+    return;
+  }
+
+  var options = {
+    "key": "rzp_test_xxxxx",
+    "amount": 79900,
+    "currency": "INR",
+    "name": "Street Mode",
+    "description": document.getElementById("productName").innerText + " - " + size,
+    "handler": function (){
+      alert("Payment Successful ✅");
+    }
+  };
+
+  var rzp = new Razorpay(options);
+  rzp.open();
+}
+</script>
+
+</body>
+</html>
