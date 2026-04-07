@@ -106,9 +106,19 @@ nav a:hover {
 }
 
 /* IMAGE */
+.card {
+  overflow: hidden; /* IMPORTANT */
+}
+
 .card img {
   width: 100%;
   border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+/* 🔥 ZARA STYLE ZOOM */
+.card:hover img {
+  transform: scale(1.1);
 }
 
 /* TEXT */
@@ -152,4 +162,25 @@ nav a:hover {
   padding: 15px 20px;
   border-radius: 50px;
   text-decoration: none;
+}
+
+.card {
+  position: relative;
+}
+
+.card::after {
+  content: "View Product";
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 8px 15px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::after {
+  opacity: 1;
 }
