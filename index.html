@@ -41,11 +41,20 @@
 
   <!-- Product 1 -->
   <div class="card">
-    <img src="https://via.placeholder.com/300">
-    <h3>Printed T-Shirt</h3>
-    <p>₹799</p>
-    <button onclick="payNow('Printed T-Shirt', 799)">Buy Now</button>
-  </div>
+  <img src="https://via.placeholder.com/300">
+  <h3>Printed T-Shirt</h3>
+  <p>₹799</p>
+
+  <!-- SIZE SELECT -->
+  <select id="size1">
+    <option value="">Select Size</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+  </select>
+
+  <button onclick="buyProduct('Printed T-Shirt', 799, 'size1')">Buy Now</button>
+</div>
 
   <!-- Product 2 -->
   <div class="card">

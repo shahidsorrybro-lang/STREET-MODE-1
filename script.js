@@ -21,3 +21,26 @@ function payNow(product, price){
   var rzp = new Razorpay(options);
   rzp.open();
 }
+
+function buyProduct(product, price, sizeId){
+  var size = document.getElementById(sizeId).value;
+
+  if(size === ""){
+    alert("Please select size ❌");
+    return;
+  }
+
+  var options = {
+    "key": "rzp_live_SaCvpDZh3fWVVh",
+    "amount": price * 100,
+    "currency": "INR",
+    "name": "Street Mode",
+    "description": product + " - Size: " + size,
+    "handler": function (response){
+        alert(product + " (" + size + ") Payment Successful ✅");
+    }
+  };
+
+  var rzp = new Razorpay(options);
+  rzp.open();
+}
