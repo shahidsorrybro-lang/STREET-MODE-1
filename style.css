@@ -1,6 +1,4 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +6,9 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* BODY */
 body {
-  background: #fff;
+  background: #f8f8f8;
   color: #111;
 }
 
@@ -17,87 +16,102 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
+  padding: 20px 50px;
   background: #000;
-  color: #fff;
-}
-
-header h1 {
-  font-size: 24px;
-  letter-spacing: 1px;
+  color: white;
 }
 
 nav a {
+  color: white;
   margin-left: 20px;
   text-decoration: none;
-  color: #fff;
-  transition: 0.3s;
+  font-size: 14px;
 }
 
 nav a:hover {
-  color: #aaa;
+  opacity: 0.7;
 }
 
 /* HERO */
 .hero {
-  height: 90vh;
+  height: 80vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  background: #eaeaea;
   text-align: center;
 }
 
-.hero h2 {
+.hero h1 {
   font-size: 48px;
-  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .hero p {
-  font-size: 18px;
-  margin-bottom: 20px;
+  margin: 10px 0;
 }
 
 .hero button {
-  padding: 12px 25px;
+  padding: 12px 30px;
   border: none;
-  background: #000;
-  color: #fff;
+  background: black;
+  color: white;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .hero button:hover {
-  background: #444;
+  background: #333;
+}
+
+/* DISCOUNT BAR */
+.discount {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
 
 /* PRODUCTS */
 .products {
-  padding: 60px 8%;
+  padding: 50px;
 }
 
 .products h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
+/* GRID */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 30px;
 }
 
+/* CARD */
 .card {
-  border: 1px solid #eee;
+  background: white;
   padding: 15px;
+  border-radius: 10px;
   transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
+/* HOVER EFFECT 🔥 */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
 .card img {
   width: 100%;
+  border-radius: 10px;
 }
 
+/* TEXT */
 .card h3 {
   margin: 10px 0;
 }
@@ -106,25 +120,36 @@ nav a:hover {
   color: #555;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* FOOTER */
-footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-}
-button:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
-}
+/* SELECT */
 .card select {
   width: 100%;
   padding: 8px;
-  margin-top: 8px;
+  margin: 10px 0;
+}
+
+/* BUTTON */
+.card button {
+  width: 100%;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #333;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
 }
