@@ -17,7 +17,10 @@
 
   <h2 id="productName">Product Name</h2>
   <p id="productPrice">₹0</p>
-
+<script>
+document.getElementById("productName").innerText = localStorage.getItem("productName");
+document.getElementById("productPrice").innerText = "₹" + localStorage.getItem("productPrice");
+</script>
   <select id="size">
     <option value="">Select Size</option>
     <option>S</option>
@@ -43,7 +46,7 @@ function buyNow(){
   }
 
   var options = {
-    "key": "rzp_test_xxxxx",
+    "key": "rzp_live_SaCvpDZh3fWVVh",
     "amount": 79900,
     "currency": "INR",
     "name": "Street Mode",

@@ -44,3 +44,8 @@ function buyProduct(product, price, sizeId){
   var rzp = new Razorpay(options);
   rzp.open();
 }
+function openProduct(name, price){
+  localStorage.setItem("productName", name);
+  localStorage.setItem("productPrice", price);
+  window.location.href = "product.html";
+}
