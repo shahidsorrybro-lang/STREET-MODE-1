@@ -123,3 +123,8 @@ button:hover {
   transform: scale(1.05);
   transition: 0.3s;
 }
+.card select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+}
