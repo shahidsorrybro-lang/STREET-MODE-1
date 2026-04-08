@@ -1,3 +1,4 @@
+alert("JS connected");
 let cart = [];
 
 function addToCart(product) {
