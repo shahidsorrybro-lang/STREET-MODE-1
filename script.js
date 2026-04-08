@@ -1,10 +1,10 @@
 let cart = [];
 alert("JS connected");
 
-function addToCart(product) {
-  cart.push(product);
-  alert(product + " added to cart!");
-}function orderNow(product){
+function addToCart(product, price){
+  cart.push({name: product, price: price});
+  alert(product + " added to cart 🛒");
+}
   window.open("https://wa.me/919876543210?text=I want to buy " + product);
 }
 function payNow(product, price){
