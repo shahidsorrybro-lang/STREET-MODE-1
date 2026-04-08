@@ -17,7 +17,7 @@
     <a href="#">Shop</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
-    <a href="#" class="cart-btn">Cart 🛒</a>
+    <button onclick="viewCart()">Cart 🛒</button>
   </nav>
 </header>
 
@@ -56,9 +56,9 @@
     <option>L</option>
   </select>
 
-  <button onclick="buyProduct('Printed T-Shirt', 799, 'size1')">
-    Buy Now
-  </button>
+  <button onclick="addToCart('Printed T-Shirt', 399)">
+  Add to Cart
+</button>
 </div>
   <!-- Product 2 -->
   <div class="card">
@@ -74,9 +74,9 @@
     <option>L</option>
   </select>
 
-  <button onclick="buyProduct('Printed T-Shirt', 799, 'size1')">
-    Buy Now
-  </button>
+  <button onclick="addToCart('cargo pant', 799)">
+  Add to Cart
+</button>
 </div>
 <!-- FOOTER -->
 <footer>

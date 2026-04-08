@@ -49,3 +49,22 @@ function openProduct(name, price){
   localStorage.setItem("productPrice", price);
   window.location.href = "product.html";
 }
+let cart = [];
+
+function addToCart(product, price){
+  cart.push({name: product, price: price});
+  alert(product + " added to cart 🛒");
+}
+function viewCart(){
+  let text = "Your Cart:\n";
+  let total = 0;
+
+  cart.forEach(item => {
+    text += item.name + " - ₹" + item.price + "\n";
+    total += item.price;
+  });
+
+  text += "\nTotal: ₹" + total;
+
+  alert(text);
+}
