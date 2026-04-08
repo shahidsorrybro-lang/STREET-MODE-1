@@ -1,5 +1,5 @@
-alert("JS connected");
 let cart = [];
+alert("JS connected");
 
 function addToCart(product) {
   cart.push(product);
