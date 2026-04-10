@@ -1,37 +1,36 @@
-// 🛒 CART SYSTEM
+// =====================
+// CART SYSTEM
+// =====================
 
-// ➕ ADD TO CART
-function addToCart(product, price){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// Get cart from storage OR create new
+function getCart(){
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
-  cart.push({name: product, price: price});
-
+// Save cart
+function saveCart(cart){
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// =====================
+// ADD TO CART
+// =====================
+function addToCart(product, price){
+  let cart = getCart();
+
+  cart.push({
+    name: product,
+    price: price
+  });
+
+  saveCart(cart);
 
   alert(product + " added to cart 🛒");
 }
 
-// 👀 VIEW CART
-function viewCart(){
-  let text = "Your Cart:\n";
-  let total = 0;
-
-  if(cart.length === 0){
-    alert("Cart is empty 🛒");
-    return;
-  }
-
-  cart.forEach(item => {
-    text += item.name + " - ₹" + item.price + "\n";
-    total += item.price;
-  });
-
-  text += "\nTotal: ₹" + total;
-
-  alert(text);
-}
-
-// 💳 BUY WITH SIZE + PAYMENT
+// =====================
+// BUY WITH SIZE
+// =====================
 function buyProduct(product, price, sizeId){
   let size = document.getElementById(sizeId).value;
 
@@ -40,24 +39,40 @@ function buyProduct(product, price, sizeId){
     return;
   }
 
+  alert(product + " (" + size + ") added to cart 🛒");
+
+  addToCart(product + " (" + size + ")", price);
+}
+
+// =====================
+// VIEW CART PAGE
+// =====================
+function viewCart(){
+  window.location.href = "cart.html";
+}
+
+// =====================
+// DIRECT BUY (WHATSAPP)
+// =====================
+function orderNow(product){
+  window.open("https://wa.me/919876543210?text=I want to buy " + product);
+}
+
+// =====================
+// PAYMENT (RAZORPAY)
+// =====================
+function payNow(product, price){
   var options = {
-    "key": "rzp_live_SaCvpDZh3fWVVh", // 🔁 replace with your real key
+    "key": "rzp_live_SaCvpDZh3fWVVh", // your key
     "amount": price * 100,
     "currency": "INR",
     "name": "Street Mode",
-    "description": product + " - Size: " + size,
-    "handler": function (response){
-      alert(product + " (" + size + ") Payment Successful ✅");
+    "description": product,
+    "handler": function (){
+      alert(product + " Payment Successful ✅");
     }
   };
 
   var rzp = new Razorpay(options);
   rzp.open();
-}
-
-// 📦 OPEN PRODUCT PAGE
-function openProduct(name, price){
-  localStorage.setItem("productName", name);
-  localStorage.setItem("productPrice", price);
-  window.location.href = "product.html";
 }
