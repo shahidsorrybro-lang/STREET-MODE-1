@@ -12,8 +12,6 @@
 <div id="cart-items"></div>
 <h2 id="total"></h2>
 
-<script src="script.js"></script>
-
 <script>
 let cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -25,34 +23,18 @@ if(!cart || cart.length === 0){
 } else {
   cart.forEach(item => {
     let div = document.createElement("div");
+    div.style.margin = "10px 0";
+    div.style.padding = "10px";
+    div.style.border = "1px solid #ccc";
+    
     div.innerHTML = item.name + " - ₹" + item.price;
+
     container.appendChild(div);
     total += item.price;
   });
 
   document.getElementById("total").innerText = "Total: ₹" + total;
 }
-<script>
-let cart = JSON.parse(localStorage.getItem("cart"));
-
-let container = document.getElementById("cart-items");
-let total = 0;
-
-if(!cart || cart.length === 0){
-  container.innerHTML = "<h2>Your cart is empty 🛒</h2>";
-} else {
-  cart.forEach(item => {
-    let div = document.createElement("div");
-    div.innerHTML = item.name + " - ₹" + item.price;
-    container.appendChild(div);
-    total += item.price;
-  });
-
-  document.getElementById("total").innerText = "Total: ₹" + total;
-}
-</script>
-
-
 </script>
 
 </body>
