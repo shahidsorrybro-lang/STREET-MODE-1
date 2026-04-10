@@ -1,5 +1,4 @@
 // 🛒 CART SYSTEM
-let cart = [];
 
 // ➕ ADD TO CART
 function addToCart(product, price){
