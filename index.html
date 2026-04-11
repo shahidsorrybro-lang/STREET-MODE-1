@@ -1,119 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <link rel="stylesheet" href="style.css"> <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="ESNUT-KsWH9o_1LWVmDBkG97DtL-e5FRqkNbKsP_oHg" />
-    <title>Street Mode</title>
-  <link rel="stylesheet" href="style.css">
-</head><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<head>
+<meta charset="UTF-8">
+<title>Street Mode</title>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="script.js" defer></script>
+
+<style>
+body { font-family: Arial; margin: 0; }
+
+header {
+  background: black;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a, nav button {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.products {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 200px;
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+
 <body>
 
-<!-- NAVBAR -->
 <header>
-  <h1>Street Mode</h1>
+  <h2>Street Mode</h2>
   <nav>
     <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    <a href="cart.html">
-  <button style="margin-left:20px;">Cart 🛒</button>
-</a>
-</button>
+    <button onclick="viewCart()">Cart 🛒</button>
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <h2>Wear Your Attitude</h2>
-  <p>Premium Streetwear for Modern Men</p>
-  <button onclick="payNow()">Buy Now</button>
-</section>
+<div class="products">
 
-<!-- DISCOUNT --> 
-<div class="discount">
-  🔥 Flat 20% OFF on All Products
-</div>
-
-<!-- PRODUCTS -->
-<section class="products">
-  <h2>Featured Products</h2>
-
-  <div class="product-grid">
-
-  <!-- Product 1 -->
+  <!-- PRODUCT 1 -->
   <div class="card">
-    
-    <span class="badge">NEW</span>
-    
-  <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQyHl-3OiQr3tIawFMHMDfEz0ZsCqZZFm62u0KRlMZxBLe6lNly3WxSDN6FtDhcKQKSitjEpsIlJm4ZQiYbxMA3uvvE3gLiKggkHiLPEmAJU7plC7pJ7F74">
-  
-  <h3>Printed T-Shirt</h3>
-  <p>₹399</p>
+    <h3>Printed T-Shirt</h3>
+    <p>₹399</p>
 
-  <select id="size1">
-    <option value="">Select Size</option>
-    <option>S</option>
-    <option>M</option>
-    <option>L</option>
-  </select>
+    <select id="size1">
+      <option value="">Select Size</option>
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+    </select>
 
-  <button onclick="addToCart('Printed T-Shirt', 399)">
-  Add to Cart
-</button>
-</div>
-  <!-- Product 2 -->
+    <button onclick="buyProduct('Printed T-Shirt', 399, 'size1')">
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- PRODUCT 2 -->
   <div class="card">
-  <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQhKaskPdqFlNYbzX8COJmuPtdoHx_ZgLmHhSWDSAzn4usIR0QDA6j-rwuOWoz9U2Huuq2bMFMtraM8dnKGNabce4xFPNCflA">
-  
-  <h3>cargo pant</h3>
-  <p>₹799</p>
+    <h3>Cargo Pants</h3>
+    <p>₹799</p>
 
-  <select id="size1">
-    <option value="">Select Size</option>
-    <option>S</option>
-    <option>M</option>
-    <option>L</option>
-  </select>
+    <select id="size2">
+      <option value="">Select Size</option>
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+    </select>
 
-  <button onclick="addToCart('cargo pant', 799)">
-  Add to Cart
-</button>
+    <button onclick="buyProduct('Cargo Pants', 799, 'size2')">
+      Add to Cart
+    </button>
+  </div>
+
 </div>
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Street Mode. All rights reserved.</p>
-</footer>
 
-<!-- REVIEWS -->
-<section class="reviews">
-  <h2>Customer Reviews</h2>
-  <p>⭐⭐⭐⭐⭐ "Best streetwear brand!"</p>
-  <p>⭐⭐⭐⭐⭐ "Quality is amazing 🔥"</p>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <h2>Join Our Community</h2>
-  <input type="email" placeholder="Enter your email">
-  <button>Subscribe</button>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Street Mode | Surat, India</p>
-  <p>Follow us on Instagram</p>
-</footer>
-<!-- Razorpay Script -->
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-<a href="https://wa.me/918511648694?text=I want to order from Street Mode" 
-style="position:fixed;bottom:20px;right:20px;background:#25D366;
-color:white;padding:15px 18px;border-radius:50px;
-text-decoration:none;font-weight:bold;">
-Chat on WhatsApp
-</a>
-<script src="script.js"></script>
 </body>
 </html>

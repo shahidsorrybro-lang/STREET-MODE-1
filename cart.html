@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Your Cart</title>
+<meta charset="UTF-8">
+<title>Cart</title>
 </head>
+
 <body>
 
 <h1>Your Cart 🛒</h1>
@@ -12,27 +13,22 @@
 <h2 id="total"></h2>
 
 <script>
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-const container = document.getElementById("cart-items");
-const totalBox = document.getElementById("total");
-
+let container = document.getElementById("cart-items");
 let total = 0;
 
-// CLEAR BEFORE ADDING
-container.innerHTML = "";
-
 if(cart.length === 0){
-  container.innerHTML = "<h2>Cart is empty 🛒</h2>";
+  container.innerHTML = "<h2>Cart is empty</h2>";
 } else {
   cart.forEach(item => {
-    const div = document.createElement("div");
+    let div = document.createElement("div");
     div.innerText = item.name + " - ₹" + item.price;
     container.appendChild(div);
     total += item.price;
   });
 
-  totalBox.innerText = "Total: ₹" + total;
+  document.getElementById("total").innerText = "Total: ₹" + total;
 }
 </script>
 
